@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin : 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    background: #1B9CFC;
+    z-index: 88888;
+}
+
+.container{
+    width: 100%;    
+    position: relative;
+}
+
+.container > *:not(div){
+    margin: 10px auto;
+    text-align: center;
+    color: #fff;
+}
+
+.container > .todos{
+    margin: 15px auto;
+    width: 90%;
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start; */
+}
+
+.flex-direction{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.container > .todos > .empty-todos{
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+}
+
+.container > .todos > .img-done{
+    display: block;
+    margin: 0 auto;
+}
+
+.container > .btn-make-todo{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: none;
+    background: #ff4757;
+    padding: 10px;
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    right: 30px;
+    top: 500px;
+    box-shadow: 3px 0 5px rgba(0, 0, 0, 0.4);
+    z-index: 900;
+}
+
+.container > .btn-make-todo:hover{
+    opacity: 0.8;
+}
+
+.toast{
+    background: #2C3A47;
+    color: #fff;
+    font-size: 11px;
+    padding: 3px;
+    z-index: 1000;
+    position: absolute;
+    right: 90px;
+    top: 500px;
+    display: none;
+    padding: 10px;
+}
+
+.btn-make-todo:focus, .btn:focus{ outline: none;}
+
+.container > .todos > .todo{
+    width: 32%;
+    background: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 15px;
+    margin: 0px 6px 20px; /* arriba - a los lados - abajo*/
+}
+
+.container > .todos > .todo > p[class*="legend"]{
+    width: 90%;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.container > .todos > .todo > .todo-name{
+    width: 70%;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    padding-top: 10px;
+    margin: 6px 0px;
+}
+
+.container > .todos > .todo > .todo-id{
+    width: 10%;
+    height: 35px;
+    display: inline-block;    
+    text-align: center;
+    margin: 6px 0px;
+    font-weight: bold;
+    font-size: 10px;
+    padding: 10px 0px;
+    border-radius: 50%;
+    background: #00b894;
+    color: #fff;
+}
+
+.container > .todos > .todo > .todo-description{
+    width: 90%;
+    /* padding: 0px 5px; */
+    resize: none;
+    font-size: 13px;    
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.container > .todos > .todo > .todo-category{
+    width: 90%;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
+
+.container > .todos > .todo > .todo-date-limit{
+    width: 90%;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
+
+.container > .todos > .todo > .todo-state{
+    width: 50%;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
+
+.container > .todos > .todo > .btn{
+    width: 10%;
+    height: 30px;
+    border: none;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.container > .todos > .todo > .edit{ background: #0984e3;}
+.container > .todos > .todo > .delete{ background: #d63031;}
+
+.btn-make-charge{
+    display: block;
+    color: #000;
+    background: darkblue;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 auto;
+}
+
+/* Cover modal */
+.cover-modal{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 620px;
+    z-index: 99999;
+    background: rgba(53, 59, 72,0.7);
+    position: fixed;
+    
+    /* animation-name: animation-down;
+    animation-duration: 0.6s;
+    animation-delay: 0.6s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-direction: normal;
+    animation-fill-mode: forwards; */
+}
+
+/* Button close */
+.btn-close {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #d63031;
+    border: none;
+    margin: 10px;
+    float: right;
+    font-size: 25px;
+    color: #fff;
+}
+
+/* Formulario */
+.cover-modal > .form-add-todo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    background: #fff;
+    width: 30%;
+    height: 425px;
+    margin: 100px auto;
+    padding: 5px 0px;
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+
+}
+
+
+.cover-modal > .form-add-todo > *{
+    margin:0px 15px;
+    padding: 10px 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cover-modal > .form-add-todo > .title-form{
+    text-align: center;
+    border: none;
+}
+
+.cover-modal > .form-add-todo > .title-form > span{margin-right: 10px;}
+
+.cover-modal > .form-add-todo > *:not(select){
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid rgba(27, 20, 100, 1.0);
+}
+
+.cover-modal > .form-add-todo > input[type="submit"]{
+    border:none;
+    background: rgba(76, 209, 55,1.0);
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 20px;    
+}
+
+.cover-modal > .form-add-todo > *:not(input[type="submit"]):focus{
+    outline: none;    
+    border-color: rgba(237, 76, 103,1.0);
+}
+
+.cover-modal > .form-add-todo > select{border-radius: 10px;}
+
+.cover-modal > .form-add-todo > .txt-todo-description{
+    height: 100px;
+    resize: none;
+}
+
+/*Animación cover-modal*/
+.hide{
+    /* width: 100%;
+    height: 100%;
+    bottom: 650px;
+    background-color: rgba(44, 62, 80,0.7);
+    position: absolute; */
+
+    animation-name: animation-up;
+    animation-duration: 0.6s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-direction: normal;
+    animation-fill-mode: backwards;
+  }
+
+  .show{
+    animation-name: animation-down;
+    animation-duration: 0.6s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+  }
+
+  @-webkit-keyframes animation-down {
+    0% {
+      bottom : 620px;
+    }
+
+    100% {
+      bottom: 0px;
+    }
+  }
+
+  @-webkit-keyframes animation-up{
+      0%{
+          bottom : 0px;
+      }
+
+      100%{
+          bottom: 620px;
+      }
+  }

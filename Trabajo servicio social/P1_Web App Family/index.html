@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./frontend/css/index.css">   
+    <title>Web App Familiy | TODOS</title>
+</head>
+<body>    
+
+    <div class="cover-modal" id="cover-modal">
+        <button id="btn-close" class="btn-close"><span><i class="fas fa-times"></i></span></button>
+        <form class="form-add-todo" id="form-add-todo">
+            <h2 class="title-form"><span><i class="fas fa-book-reader"></i></span>Add TODO</h2>
+            <input type="text" name="txt-todo-name" id="txtTarea" placeholder="Input a TODO" required>
+            <textarea id="txt-todo-description" class="txt-todo-description" placeholder="Type a description of your TODO..." required></textarea>
+            <select name="sel-todo-name" id="sel-todo-name" required>
+                <option selected>Elige una categoría</option>
+                <option value="Finanzas">Finanzas</option>
+                <option value="Labor doméstica">Labor doméstica</option>
+                <option value="Cotidiana">Cotidiana</option>
+                <option value="Personal">Personal</option>
+                <option value="Trabajo">Trabajo</option>
+            </select>
+            <input type="date" name="txt-todo-date" id="txt-todo-date" required>
+            <input type="submit" value="Add TODO" class="btn-add-todo" required>
+        </form>
+    </div>
+
+    <div class="container">
+        <h1>Web App Familiy | TODO Section</h1>
+        <h2>Hi Pepito! | Things To Do</h2>
+        <!-- <button class="btn-make-charge" id="btn-make-charge">Cargar info</button> -->
+    
+        <div class="todos" id="todos">    
+            <img src="img/done.png" width="300" height="300" id="img-done" class="img-done">
+            <p class="empty-todos" id="empty-todos">No tienes tareas pendientes por el momento</p>
+        </div>
+
+        <template id="card-template">
+            <div class="todo">                
+                <p class="todo-name"></p>
+                <label class="todo-id"></label>
+                <p class="todo-description-legend">Descripción</p>
+                <textarea class="todo-description" readonly></textarea>
+                <p class="todo-category-legend">Categoría</p>
+                <p class="todo-category"></p>
+                <p class="todo-description-legend">Hacer antes de</p>
+                <p class="todo-date-limit"></p>
+                <p class="todo-description-legend">Estado de la tarea</p>
+                <p class="todo-state"></p>
+                <!-- <button class="btn edit" id="btn-edit"><i class="fas fa-edit" disabled></i></button> -->
+                <button class="btn delete" id="btn-delete"><i class="fas fa-trash-alt"></i></button>
+            </div>
+        </template>
+
+        <div class="toast" id="toast">Create a New TODO</div>
+        <button class="btn-make-todo" id="btn-make-todo">+</button>        
+
+    </div>
+    
+    <script src="https://kit.fontawesome.com/7f3d479cce.js" crossorigin="anonymous"></script>
+    <script src="./frontend/js/managing.js"></script>
+    <script src="./frontend/js/effects.js"></script>
+</body>
+</html>

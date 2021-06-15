@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;700&family=Play&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/*Encabezado*/
+.container{
+    width: 100%;    
+    font-size: 12px;
+}
+
+header, main, footer{width: 100%;}
+
+/* header > div, header > i{
+    border: solid 2px black;
+} */
+
+header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 60px;
+    position: fixed;
+    z-index: 9000;
+    background: #fff;
+    /* background: rgba(255, 255, 255, 0.2); */
+}
+
+header > .encabezado{    
+    width: 55%;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;    
+}
+
+header > .encabezado > *{
+    margin-right: 5px;
+}
+
+header > .encabezado > .fa-university{
+    font-size: 40px;
+    color: #d63031;
+}
+
+header > .encabezado > h3{
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+header > .icono{
+    width: 5%;    
+    padding: 10px 0;
+}
+
+header > .icono > i{
+    margin: 5px auto;
+    font-size: 28px;
+    float: right;
+}
+
+/*Contenido principal*/
+
+main{
+    background: #f1f2f6; 
+    padding-top: 60px;
+}
+
+main > .main{
+    width: 100%;
+    height: 250px;  
+    background: url(background.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;        
+}
+
+main > .main::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+main > .main > .info{
+    position: relative;
+    width: 60%;
+    height: 120px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;    
+}
+
+main > .main > .info > h2{
+    font-weight: 200;
+    font-size: 20px;
+}
+
+main > .main > .info > *{ font-family: 'Montserrat', sans-serif;}
+
+main > .main > .info > h4{
+    font-weight: 100;
+    font-size: 13px;
+}
+
+main > .main > .info >.buscador{
+    width: 350px;
+    height: 42px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 2px;
+    background: #fff;
+}
+
+main > .main > .info >.buscador > input{
+    width: 100%;
+    height: 40px;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 10px;    
+    color: #000;
+    font-weight: bolder;
+    border: none;
+}
+
+main > .main > .info >.buscador > input::placeholder{
+    color: #2c3e50;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+main > .main > .info >.buscador > input:focus{ outline: none; }
+
+main > .main > .info >.buscador > i{
+    font-size: 20px;
+    margin: 10px;
+    color: #d63031;
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: rgb(131,58,180);
+
+    background: -moz-linear-gradient(90deg, rgba(131,58,180,1) 11%, rgba(253,29,29,1) 91%);
+    background: -webkit-linear-gradient(90deg, rgba(131,58,180,1) 11%, rgba(253,29,29,1) 91%);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 11%, rgba(253,29,29,1) 91%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#833ab4",endColorstr="#fd1d1d",GradientType=1);
+}
+
+.banner > .courses-ad{
+    width: 21%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    padding: 17px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+.banner > .courses-ad > i{
+    color: #fff;
+    font-size: 25px;
+    margin-right: 10px;
+    /* font-weight: lighter; */
+}
+
+/* Cursos */
+.cursos{
+    width: 60%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    /* border: 1px solid black; */
+}
+
+.courses-list{width: 100%; height: 1300px; margin-top: 10px;}
+
+.cursos > h1{
+    text-align: center;
+    padding: 15px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 35px;    
+}
+
+.cursos > .courses-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.cursos >.courses-list > .curso{
+    width: 219px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.cursos >.courses-list > .curso > img{display: block;}
+
+.cursos >.courses-list > .curso > .info-course{
+    height: 125px;
+    padding: 10px;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+}
+
+.cursos >.courses-list > .curso > .info-course > *{font-family: 'Montserrat', sans-serif;}
+
+.cursos >.courses-list > .curso > .info-course > h4{font-weight: 700; font-size: 12px;}
+.cursos >.courses-list > .curso > .info-course > h5{font-weight: 500; font-size: 11px;}
+
+.cursos >.courses-list > .curso > .info-course > .star-rating > .star{font-size: 15px;}
+.cursos >.courses-list > .curso > .info-course > .star-rating > .active{color: #EAB543;}
+.cursos >.courses-list > .curso > .info-course > .star-rating:not(.active){color: #CAD3C8;}
+
+
+.cursos >.courses-list > .curso > .info-course > .precios{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cursos >.courses-list > .curso > .info-course > .precios > p:nth-child(1){
+    font-size: 12px;
+    text-decoration: line-through;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cursos >.courses-list > .curso > .info-course > .precios > p:nth-child(2){
+    font-size: 17px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.cursos >.courses-list > .curso > .btn_addCart{
+    display: block;
+    width: 180px;
+    padding: 5px;
+    margin: 10px auto;
+    border: none;
+    background: #25CCF7;
+    border-radius: 3px;
+    
+    font-family: 'Play', sans-serif;
+    font-size: 10px;
+    color: #fff;
+}
+
+/* Footer */
+
+footer{
+    width: 100%;
+    background: #0097e6;
+}
+
+footer > .services{
+    width: 60%;
+    height: 180px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 20px 0;
+}
+
+footer > .services > li{
+    color: #fff;
+    padding-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+/*Car shopping*/
+.container > .cart-shopping{
+    position: absolute;
+    left: 750px;
+    top: 60px;
+    padding: 10px;
+    width: 400px;
+    background: white;
+    z-index: 200;
+    
+}
+
+.container > .cart-shopping > .total{
+    text-align: right;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;    
+    color: #eb2f06; 
+}
+
+.container > .cart-shopping > .items-list{
+    width: 100%;
+    table-layout: fixed;
+    text-align: left;    
+    background: white;
+    border-collapse: collapse;        
+    display: none; 
+}
+
+
+.container > .cart-shopping > .items-list > thead > tr > th{    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    padding: 7px;
+    text-align: center;
+}
+
+.container > .cart-shopping > .items-list > tbody > tr > td{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    padding: 10px 7px;
+    text-align: center;
+}
+
+.container > .cart-shopping > .empty-message{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+.container > .cart-shopping > .items-list > tbody > .empty-text{ 
+    text-align: center;
+    font-size: 15px;
+}
+
+tr{
+    border: 1px solid #c8d6e5;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+}
+
+.container > .cart-shopping > .empty-car{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 5px;    
+    background: white;
+    border: 1px solid #bdc3c7;
+    display: none;
+}
+
+/*Botón para eliminar producto*/
+.btn_delete_product{
+    border-radius: 50%;
+    border: none;
+    background: #e74c3c;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+}
